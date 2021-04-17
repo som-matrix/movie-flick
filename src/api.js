@@ -28,7 +28,7 @@ export const popularMoviesUrl = () =>
 export const topRatedMoviesUrl = () =>
   `${baseUrl}${top_rated}?api_key=${my_key}&language=en-US&page=1`;
 // Upcoming Movies
-export const upcomingMoviesUrl = `${baseUrl}${upcoming}?api_key=${my_key}&language=en-US&page=1`;
+export const upcomingMoviesUrl = ()=> `${baseUrl}${upcoming}?api_key=${my_key}&language=en-US&page=1`;
 
 // Get TV shows Url's
 
@@ -50,5 +50,5 @@ export const searchedTvShowUrl = (tv_name) =>
   `https://api.themoviedb.org/3/search/tv?api_key=${my_key}&language=en-US&page=1&include_adult=false&query=${tv_name}`;
 
 // Get movie details and tv details 
-export const getMovieDetails = (movie_id)=> `${baseUrl}${movie_id}?api_key=${my_key}&language=en-US`
-export const getTvdetails = (tv_id)=> `${baseUrlTV}${tv_id}?api_key=${my_key}&language=en-US`
+export const getMovieDetailsUrl = (movie_id)=> `${baseUrl}${movie_id}?api_key=${my_key}&language=en-US`
+export const getTvDetailsUrl = (tv_id)=> `${baseUrlTV}${tv_id}?api_key=${my_key}&language=en-US`
