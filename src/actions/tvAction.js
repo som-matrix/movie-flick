@@ -21,7 +21,6 @@ export const loadTv = ()=> async (dispatch)=>{
         }
     })
 }
-
 export const searchedTv = (tv_name)=> async (dispatch)=>{
     const searchedResults = await axios.get(searchedTvShowUrl(tv_name))
 

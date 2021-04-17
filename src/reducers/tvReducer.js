@@ -3,7 +3,7 @@ const initialState = {
     airingTodayTv:[],
     popularTv:[],
     topRatedTv:[],
-    searchedTv:[]
+    searchedTv:[],
 }
 
  const tvReducer = (state=initialState,action)=>{

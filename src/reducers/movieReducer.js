@@ -4,7 +4,7 @@ const initialState = {
     topRatedMovies:[],
     popularMovies:[],
     upcomingMovies:[],
-    searchedMovie:[]
+    searchedMovie:[],
 }
 
 const movieReducer = (state=initialState, action)=>{
@@ -22,7 +22,7 @@ const movieReducer = (state=initialState, action)=>{
         case getSearched:
             return{
                 ...state,
-                serachedMovie:action.payload.searched
+                serachedMovie:action.payload.searched,
             }
         case clearSearched:
             return{
