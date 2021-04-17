@@ -7,14 +7,13 @@ import {
   now_playing,
 } from "./constants";
 
-// dotenv middleware
-require("dotenv").config();
+
 
 // Movie and TV base url
 const baseUrl = `https://api.themoviedb.org/3/movie/`;
 const baseUrlTV = `https://api.themoviedb.org/3/tv/`;
 // Env
-const my_key = process.env.API_KEY;
+const my_key = '7248816321a6120ae678bee62b2b9c87'
 
 // Movies
 
@@ -23,7 +22,7 @@ export const nowPlayingMoviesUrl = () =>
   `${baseUrl}${now_playing}?api_key=${my_key}&language=en-US&page=1`;
 // Popular Movies
 export const popularMoviesUrl = () =>
-  `${baseUrl}${popular}?api_key=${my_key}language=en-US&page=1`;
+  `${baseUrl}${popular}?api_key=${my_key}&language=en-US&page=1`;
 // Top rated Movies
 export const topRatedMoviesUrl = () =>
   `${baseUrl}${top_rated}?api_key=${my_key}&language=en-US&page=1`;
@@ -37,7 +36,7 @@ export const airingTvShowUrl = () =>
   `${baseUrlTV}${airing_today}?api_key=${my_key}&language=en-US&page=1`;
 // Popular
 export const popularTvShowUrl = () =>
-  `${baseUrlTV}${popular}?api_key=${my_key}}&language=en-US&page=1`;
+  `${baseUrlTV}${popular}?api_key=${my_key}&language=en-US&page=1`;
 // Top rated
 export const topRatedTvShowUrl = () =>
   `${baseUrlTV}${top_rated}?api_key=${my_key}&language=en-US&page=1`;

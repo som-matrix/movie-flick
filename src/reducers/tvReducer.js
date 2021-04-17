@@ -1,4 +1,4 @@
-
+import {getTv,getSearched,clearSearched} from '../constants'
 const initialState = {
     airingTodayTv:[],
     popularTv:[],
@@ -9,19 +9,19 @@ const initialState = {
  const tvReducer = (state=initialState,action)=>{
 
     switch(action.type){
-        case "GET_TV":
+        case getTv:
             return{
               ...state,
               airingTodayTv:action.payload.airingToday,
               popularTv:action.payload.popular,
               topRatedTv:action.payload.topRated
             }
-        case "GET_SEARCHED":
+        case getSearched:
             return{
                 ...state,
                 searchedTv:action.payload.searched,
             }
-        case "CLEAR_SEARCH":
+        case clearSearched:
             return{
                 ...state,
                 searchedTv:[]

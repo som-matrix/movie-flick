@@ -1,3 +1,4 @@
+import {getMovies,getSearched,clearSearched} from '../constants'
 const initialState = {
     nowPlayingMovies:[],
     topRatedMovies:[],
@@ -9,7 +10,7 @@ const initialState = {
 const movieReducer = (state=initialState, action)=>{
 
     switch(action.type){
-        case "GET_MOVIES":
+        case getMovies:
             return{
               ...state,
               nowPlayingMovies:action.payload.nowPlaying,
@@ -18,12 +19,12 @@ const movieReducer = (state=initialState, action)=>{
               upcomingMovies:action.payload.upcoming,
               
             }
-        case "GET_SEARCHED":
+        case getSearched:
             return{
                 ...state,
                 serachedMovie:action.payload.searched
             }
-        case "CLEAR_SEARCH":
+        case clearSearched:
             return{
                 ...state,
                 searchedMovie:[]

@@ -1,3 +1,4 @@
+import {getDetails,loadDetails} from '../constants'
 const initialState = {
     tvData:{},
     isLoading:true,
@@ -5,13 +6,13 @@ const initialState = {
 
 const tvDetailsReducer = (state=initialState,action)=>{
     switch(action.type){
-      case "GET_DETAILS":
+      case getDetails:
           return{
               ...state,
               tvData:action.payload.tv,
               isLoading:false
           }
-        case "LOAD_DETAILS":
+        case loadDetails:
             return{
                 ...state,
                 isLoading:true

@@ -1,3 +1,4 @@
+import {getDetails,loadDetails} from '../constants'
 const initialState = {
     movieData:{},
     isLoading:true,
@@ -5,13 +6,13 @@ const initialState = {
 
 const movieDetailsReducer = (state=initialState,action)=>{
     switch(action.type){
-      case "GET_DETAILS":
+      case getDetails:
           return{
               ...state,
               movieData:action.payload.movie,
               isLoading:false
           }
-        case "LOAD_DETAILS":
+        case loadDetails:
             return{
                 ...state,
                 isLoading:true

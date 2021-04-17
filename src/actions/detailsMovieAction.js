@@ -1,16 +1,16 @@
 import axios from 'axios';
 import {getMovieDetailsUrl} from '../api'
-
-export const loadDetails = (movie_id) => async (dispatch)=>{
+import {getDetails,loadDetails} from '../constants'
+export const loadDetailsMovie = (movie_id) => async (dispatch)=>{
 
     dispatch({
-        type:"LOAD_DETAILS"
+        type:loadDetails
     })
     const getMovieResults = await axios.get(getMovieDetailsUrl(movie_id))
     dispatch({
-        type:"GET_DETAILS",
+        type:getDetails,
         payload:{
-            movie:getMovieResults
+            movie:getMovieResults.data.results
         }
     })
 }
