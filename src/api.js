@@ -10,7 +10,7 @@ import {
 const baseUrl = `https://api.themoviedb.org/3/movie/`;
 const baseUrlTV = `https://api.themoviedb.org/3/tv/`;
 // Env
-const my_key = '7248816321a6120ae678bee62b2b9c87'
+const my_key = process.env.REACT_APP_API_KEY
 // Movies
 // Now Playing
 export const nowPlayingMoviesUrl = () =>

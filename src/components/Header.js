@@ -2,27 +2,28 @@ import React from "react";
 import { StyledHeader } from "../styles/HeaderStyles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const Header = () => {
+  
   return (
     <StyledHeader>
       <div className="main-wrapper">
         <div className="left-wrapper">
           <div className="logo">
-            <Link to="/">
+            <NavLink to="/">
               <h1>MovieFlicks</h1>
-            </Link>
+            </NavLink>
           </div>
           <div className="routes">
-            <Link to="/">
+            <NavLink exact to="/" activeClassName="line">
               <h3>Home</h3>
-            </Link>
-            <Link to="/movies">
+            </NavLink>
+            <NavLink to="/movies" activeClassName="line">
               <h3>Movies</h3>
-            </Link>
-            <Link to="/tv">
+            </NavLink>
+            <NavLink to="/tv" activeClassName="line">
               <h3>Series</h3>
-            </Link>
+            </NavLink>
           </div>
         </div>
         <div className="right-wrapper">

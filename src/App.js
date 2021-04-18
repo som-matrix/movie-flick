@@ -7,6 +7,8 @@ import { loadTv } from "./actions/tvAction";
 import {GlobalStyle} from './styles/GlobalStyles'
 // Components
 import Header from './components/Header'
+import MovieDetails from './components/MovieDetails'
+import SeriesDetails from './components/SeriesDetails'
 // Pages
 import Home from './pages/Home'
 import Movie from './pages/Movie'
@@ -27,11 +29,17 @@ function App() {
         <Route path="/" exact>
           <Home/>
         </Route>
-        <Route path="/movies">
+        <Route exact path="/movies">
           <Movie/>
         </Route>
-        <Route path="/tv">
+        <Route path="/movies/:id">
+          <MovieDetails/>
+        </Route>
+        <Route exact path="/tv">
           <Tv/>
+        </Route>
+        <Route path="/tv/:id">
+          <SeriesDetails/>
         </Route>
       </Switch>
      </div>

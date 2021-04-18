@@ -1,11 +1,12 @@
 import styled from 'styled-components'
-
-export const StyledMovie = styled.div`
+import {motion} from 'framer-motion'
+export const StyledMovie = styled(motion.div)`
  min-height:30vh;
  box-shadow: 1px 1px 6px 1px rgba(51, 51, 51, 0.3);
  border-radius:0.5rem;
  cursor:pointer;
  overflow:hidden;
+ position:relative;
  h3 {
     text-align: center;
     padding: 2rem 0;
@@ -20,6 +21,7 @@ export const StyledMovie = styled.div`
      height:40vh;
      width:100%;
      object-fit:cover;
- }
+     border-radius:0.5rem;
+   }
  
 `

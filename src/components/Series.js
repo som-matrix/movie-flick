@@ -1,9 +1,14 @@
 import React from "react";
+import {useHistory} from 'react-router-dom'
 // Styled Components
 import { StyledTv } from "../styles/SeriesStyle";
 const Series = ({ id, title, image, releaseDate, voteCount }) => {
+  const history = useHistory()
+  const seriesDetailsHandler = ()=>{
+    history.push(`/tv/${id}`)
+  }
   return (
-    <StyledTv>
+    <StyledTv onClick={seriesDetailsHandler}>
       <img
         src={`https://www.themoviedb.org/t/p/w440_and_h660_face${image}`}
         alt={title}
@@ -11,8 +16,8 @@ const Series = ({ id, title, image, releaseDate, voteCount }) => {
 
       <h3>{title}</h3>
       <div className="flex">
-        <h4>{`Released ${releaseDate}`}</h4>
-        <p>{voteCount}</p>
+        <h4>{`Released: ${releaseDate}`}</h4>
+        <p>{`Vote Average: ${voteCount}`}</p>
       </div>
     </StyledTv>
   );

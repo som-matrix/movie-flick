@@ -54,6 +54,8 @@ export const GlobalStyle = createGlobalStyle`
  input{
      border:none;
      outline:none;
+     padding:1rem 2rem;
+     border-radius:0.8rem;
  }
  button{
      border:none;
