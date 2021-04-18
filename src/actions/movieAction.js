@@ -4,9 +4,9 @@ import {
   topRatedMoviesUrl,
   popularMoviesUrl,
   upcomingMoviesUrl,
-  serachedMovieUrl,
+  searchedMovieUrl,
 } from "../api";
-import {getMovies,getSearched} from '../constants'
+import {getMovies,getSearchedMovie} from '../constants'
 export const loadMovies = ()=> async (dispatch) => {
 
     const nowPlayingResults = await axios.get(nowPlayingMoviesUrl())
@@ -26,12 +26,12 @@ export const loadMovies = ()=> async (dispatch) => {
 }
 
 export const searchMovies = (movie_name)=> async (dispatch) => {
-    const searchResults = await axios.get(serachedMovieUrl(movie_name))
+    const searchResults = await axios.get(searchedMovieUrl(movie_name))
 
     dispatch({
-        type:getSearched,
+        type:getSearchedMovie,
         payload:{
-            searched:searchResults.data.results
+            searches:searchResults.data.results
         }
     })
 }

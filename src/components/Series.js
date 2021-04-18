@@ -1,11 +1,15 @@
 import React from "react";
 import {useHistory} from 'react-router-dom'
+import { useDispatch } from "react-redux";
+import {loadDetailsTv} from '../actions/detailsTvAction'
 // Styled Components
 import { StyledTv } from "../styles/SeriesStyle";
 const Series = ({ id, title, image, releaseDate, voteCount }) => {
+  const dispatch = useDispatch()
   const history = useHistory()
   const seriesDetailsHandler = ()=>{
     history.push(`/tv/${id}`)
+    dispatch(loadDetailsTv(id))
   }
   return (
     <StyledTv onClick={seriesDetailsHandler}>

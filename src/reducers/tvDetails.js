@@ -1,7 +1,7 @@
 import {getDetails,loadDetails} from '../constants'
 const initialState = {
-    tvData:{},
-    isLoading:true,
+    tvData:[],
+    isLoading:true
 }
 
 const tvDetailsReducer = (state=initialState,action)=>{

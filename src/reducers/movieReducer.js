@@ -1,4 +1,4 @@
-import {getMovies,getSearched,clearSearched} from '../constants'
+import {getMovies,getSearchedMovie,clearSearched} from '../constants'
 const initialState = {
     nowPlayingMovies:[],
     topRatedMovies:[],
@@ -19,10 +19,10 @@ const movieReducer = (state=initialState, action)=>{
               upcomingMovies:action.payload.upcoming,
               
             }
-        case getSearched:
+        case getSearchedMovie:
             return{
                 ...state,
-                serachedMovie:action.payload.searched,
+                searchedMovie:action.payload.searches,
             }
         case clearSearched:
             return{

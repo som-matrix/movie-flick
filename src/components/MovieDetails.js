@@ -1,11 +1,20 @@
-import React from 'react'
-
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import {  useHistory } from "react-router-dom";
 const MovieDetails = () => {
-    return (
-        <div>
-            <h2>MovieDetails</h2>
-        </div>
-    )
-}
+  const history = useHistory();
+  const { movieData } = useSelector((state) => state.movieDetails);
+  const reloadHandler = ()=>{
+      history.push('/movies')
+  }
+  useEffect(()=>{
+      window.addEventListener('load',reloadHandler)
+  })
+  return (
+    <div>
+      <p>{movieData.overview}</p>
+    </div>
+  );
+};
 
-export default MovieDetails
+export default MovieDetails;

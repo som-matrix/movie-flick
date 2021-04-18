@@ -5,7 +5,7 @@ import {
   topRatedTvShowUrl,
   searchedTvShowUrl,
 } from "../api";
-import {getTv,getSearched} from '../constants'
+import {getTv,getSearchedTv} from '../constants'
 export const loadTv = ()=> async (dispatch)=>{
 
     const airingTvResults = await axios.get(airingTvShowUrl())
@@ -21,13 +21,13 @@ export const loadTv = ()=> async (dispatch)=>{
         }
     })
 }
-export const searchedTv = (tv_name)=> async (dispatch)=>{
+export const searchedTvSeries = (tv_name)=> async (dispatch)=>{
     const searchedResults = await axios.get(searchedTvShowUrl(tv_name))
 
     dispatch({
-        type:getSearched,
+        type:getSearchedTv,
         payload:{
-            searched:searchedResults
+            searches:searchedResults.data.results
         }
     })
 }

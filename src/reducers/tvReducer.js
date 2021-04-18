@@ -1,4 +1,4 @@
-import {getTv,getSearched,clearSearched} from '../constants'
+import {getTv,getSearchedTv,clearSearched} from '../constants'
 const initialState = {
     airingTodayTv:[],
     popularTv:[],
@@ -16,10 +16,10 @@ const initialState = {
               popularTv:action.payload.popular,
               topRatedTv:action.payload.topRated
             }
-        case getSearched:
+        case getSearchedTv:
             return{
                 ...state,
-                searchedTv:action.payload.searched,
+                searchedTv:action.payload.searches,
             }
         case clearSearched:
             return{

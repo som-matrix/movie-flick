@@ -1,9 +1,18 @@
-import React from 'react'
-
+import React,{useEffect} from 'react'
+import { useSelector } from "react-redux";
+import {  useHistory } from "react-router-dom";
 const SeriesDetails = () => {
+    const history = useHistory();
+    const { tvData } = useSelector((state) => state.tvDetails);
+    const reloadHandler = ()=>{
+        history.push(`/tv`)
+    }
+    useEffect(()=>{
+        window.addEventListener('load',reloadHandler)
+    })
     return (
         <div>
-            <h2>Series Details</h2>
+            <h2>{tvData.overview}</h2>
         </div>
     )
 }

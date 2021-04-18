@@ -35,11 +35,12 @@ export const topRatedTvShowUrl = () =>
   `${baseUrlTV}${top_rated}?api_key=${my_key}&language=en-US&page=1`;
 
 // Search Movies and Tv
-export const serachedMovieUrl = (movie_name) =>
-  `https://api.themoviedb.org/3/search/movie?api_key=${my_key}&language=en-US&page=1&include_adult=false&query=${movie_name}`;
+export const searchedMovieUrl = (movie_name) =>
+  `https://api.themoviedb.org/3/search/movie?api_key=${my_key}&language=en-US&include_adult=false&query=${movie_name}`;
 export const searchedTvShowUrl = (tv_name) =>
-  `https://api.themoviedb.org/3/search/tv?api_key=${my_key}&language=en-US&page=1&include_adult=false&query=${tv_name}`;
+  `https://api.themoviedb.org/3/search/tv?api_key=${my_key}&language=en-US&include_adult=false&query=${tv_name}`;
 
 // Get movie details and tv details 
 export const getMovieDetailsUrl = (movie_id)=> `${baseUrl}${movie_id}?api_key=${my_key}&language=en-US`
 export const getTvDetailsUrl = (tv_id)=> `${baseUrlTV}${tv_id}?api_key=${my_key}&language=en-US`
+

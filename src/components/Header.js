@@ -1,10 +1,24 @@
-import React from "react";
+import React,{useState} from "react";
+import {useDispatch} from 'react-redux'
 import { StyledHeader } from "../styles/HeaderStyles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
+// Dispatch action
+import {searchMovies} from '../actions/movieAction'
+import {searchedTvSeries} from '../actions/tvAction'
 const Header = () => {
-  
+  const dispatch = useDispatch()
+  const [searchInput,setSearchInput] = useState('')
+  const inputHandler = (e)=>{
+    setSearchInput(e.target.value)
+  }
+  const searchHandler = (e)=>{
+    e.preventDefault()
+    dispatch(searchMovies(searchInput))
+    dispatch(searchedTvSeries(searchInput))
+    setSearchInput('')
+  }
   return (
     <StyledHeader>
       <div className="main-wrapper">
@@ -27,8 +41,8 @@ const Header = () => {
           </div>
         </div>
         <div className="right-wrapper">
-          <form>
-            <input type="text" placeholder="Search Here" />
+          <form onSubmit={searchHandler}>
+            <input value={searchInput} onChange={inputHandler} type="text" placeholder="Search Here" />
           </form>
           <div className="menu">
             <FontAwesomeIcon

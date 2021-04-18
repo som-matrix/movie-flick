@@ -1,5 +1,5 @@
 import React from "react";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 // Components
 import Movies from "../components/Movies";
 import Series from "../components/Series";
@@ -10,20 +10,34 @@ import {
   StyledSeries,
 } from "../styles/HomeStyles";
 const Home = () => {
-  // All the states from the store
-  //Movies
+  //All states of Movies
   const {
     nowPlayingMovies,
     topRatedMovies,
     popularMovies,
     upcomingMovies,
+    searchedMovie
   } = useSelector((state) => state.movies);
-  //Tv Series
-  const { airingTodayTv, popularTv, topRatedTv } = useSelector(
+  //All state of Tv Series
+  const { airingTodayTv, popularTv, topRatedTv, searchedTv } = useSelector(
     (state) => state.tv
   );
   return (
     <StyledContainer>
+      <StyledMovies>
+        <h2>Searched Details</h2>
+        {searchedMovie.map((movie) => (
+          <Movies
+            id={movie.id}
+            key={movie.id}
+            title={movie.title}
+            image={movie.poster_path}
+            releaseDate={movie.release_date}
+            voteCount={movie.vote_average}
+          />
+        ))}
+      </StyledMovies>
+
       <h2>Now Playing</h2>
       <StyledMovies>
         {nowPlayingMovies.map((movie) => (
@@ -91,29 +105,29 @@ const Home = () => {
       </StyledSeries>
       <h2>Popular Tv</h2>
       <StyledSeries>
-          {popularTv.map((tv) => (
-              <Series
-              key={tv.id}
-              id={tv.id}
-              title={tv.name}
-              image={tv.poster_path}
-              releaseDate={tv.first_air_date}
-              voteCount={tv.vote_average}
-            />
-          ))}
+        {popularTv.map((tv) => (
+          <Series
+            key={tv.id}
+            id={tv.id}
+            title={tv.name}
+            image={tv.poster_path}
+            releaseDate={tv.first_air_date}
+            voteCount={tv.vote_average}
+          />
+        ))}
       </StyledSeries>
       <h2>Upcoming Tv</h2>
       <StyledSeries>
-          {topRatedTv.map(tv=>(
-              <Series
-              key={tv.id}
-              id={tv.id}
-              title={tv.name}
-              image={tv.poster_path}
-              releaseDate={tv.first_air_date}
-              voteCount={tv.vote_average}
-            />
-          ))}
+        {topRatedTv.map((tv) => (
+          <Series
+            key={tv.id}
+            id={tv.id}
+            title={tv.name}
+            image={tv.poster_path}
+            releaseDate={tv.first_air_date}
+            voteCount={tv.vote_average}
+          />
+        ))}
       </StyledSeries>
     </StyledContainer>
   );

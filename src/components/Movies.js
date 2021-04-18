@@ -1,12 +1,16 @@
 import React from "react";
-import {useHistory} from 'react-router-dom'
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loadDetailsMovie } from '../actions/detailsMovieAction'
 // Styled Components
 import { StyledMovie } from "../styles/MovieStyles";
 const Movies = ({ id, title, image, releaseDate, voteCount }) => {
-  const history = useHistory()
-  const movieDetailsHandler = ()=>{
-    history.push(`/movies/${id}`)
-  }
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const movieDetailsHandler = () => {
+    history.push(`/movies/${id}`);
+    dispatch(loadDetailsMovie(id));
+  };
   return (
     <StyledMovie onClick={movieDetailsHandler}>
       <img

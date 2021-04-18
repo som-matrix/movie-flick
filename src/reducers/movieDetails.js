@@ -1,7 +1,8 @@
+// Action types imported from constant
 import {getDetails,loadDetails} from '../constants'
 const initialState = {
-    movieData:{},
-    isLoading:true,
+    movieData:[],
+    isLoading:false
 }
 
 const movieDetailsReducer = (state=initialState,action)=>{
@@ -11,7 +12,7 @@ const movieDetailsReducer = (state=initialState,action)=>{
               ...state,
               movieData:action.payload.movie,
               isLoading:false
-          }
+           }
         case loadDetails:
             return{
                 ...state,
