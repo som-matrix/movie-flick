@@ -9,41 +9,59 @@ import {
   StyledMovies,
   StyledSeries,
 } from "../styles/HomeStyles";
-const Home = () => {
+const Home = ({clearSearchHandler}) => {
+  
   //All states of Movies
-  const {
-    nowPlayingMovies,
-    topRatedMovies,
-    popularMovies,
-    upcomingMovies,
-    searchedMovie
-  } = useSelector((state) => state.movies);
+  const { topRatedMovies, popularMovies, searchedMovie } = useSelector(
+    (state) => state.movies
+  );
   //All state of Tv Series
-  const { airingTodayTv, popularTv, topRatedTv, searchedTv } = useSelector(
+  const { popularTv, topRatedTv, searchedTv } = useSelector(
     (state) => state.tv
   );
   return (
     <StyledContainer>
+     {searchedMovie.length && (
+       <div className="search">
+         <h2>Searched results from movies</h2>
+         <button onClick={clearSearchHandler}>Clear</button>
+       </div>
+     )}
+     {searchedMovie.length && (
+        <StyledMovies>
+          {searchedMovie.map((movie) => (
+            <Movies
+              id={movie.id}
+              key={movie.id}
+              title={movie.title}
+              image={movie.poster_path}
+              releaseDate={movie.release_date}
+              voteCount={movie.vote_average}
+            />
+          ))}
+        </StyledMovies>
+      )}
+      {searchedTv.length && (
+         <StyledSeries>
+           <h2>Searched results from Tv</h2>
+           {searchedTv.map((tv)=>(
+             <Series
+             key={tv.id}
+             id={tv.id}
+             title={tv.name}
+             image={tv.poster_path}
+             releaseDate={tv.first_air_date}
+             voteCount={tv.vote_average}
+           />
+           ))}
+         </StyledSeries>
+      )}
+      <h2>Popular Movies</h2>
       <StyledMovies>
-        <h2>Searched Details</h2>
-        {searchedMovie.map((movie) => (
+        {popularMovies.map((movie) => (
           <Movies
-            id={movie.id}
             key={movie.id}
-            title={movie.title}
-            image={movie.poster_path}
-            releaseDate={movie.release_date}
-            voteCount={movie.vote_average}
-          />
-        ))}
-      </StyledMovies>
-
-      <h2>Now Playing</h2>
-      <StyledMovies>
-        {nowPlayingMovies.map((movie) => (
-          <Movies
             id={movie.id}
-            key={movie.id}
             title={movie.title}
             image={movie.poster_path}
             releaseDate={movie.release_date}
@@ -64,45 +82,6 @@ const Home = () => {
           />
         ))}
       </StyledMovies>
-      <h2>Popular Movies</h2>
-      <StyledMovies>
-        {popularMovies.map((movie) => (
-          <Movies
-            key={movie.id}
-            id={movie.id}
-            title={movie.title}
-            image={movie.poster_path}
-            releaseDate={movie.release_date}
-            voteCount={movie.vote_average}
-          />
-        ))}
-      </StyledMovies>
-      <h2>Upcoming Movies</h2>
-      <StyledMovies>
-        {upcomingMovies.map((movie) => (
-          <Movies
-            key={movie.id}
-            id={movie.id}
-            title={movie.title}
-            image={movie.poster_path}
-            releaseDate={movie.release_date}
-            voteCount={movie.vote_average}
-          />
-        ))}
-      </StyledMovies>
-      <h2>Airing Now on Tv</h2>
-      <StyledSeries>
-        {airingTodayTv.map((tv) => (
-          <Series
-            key={tv.id}
-            id={tv.id}
-            title={tv.name}
-            image={tv.poster_path}
-            releaseDate={tv.first_air_date}
-            voteCount={tv.vote_average}
-          />
-        ))}
-      </StyledSeries>
       <h2>Popular Tv</h2>
       <StyledSeries>
         {popularTv.map((tv) => (
@@ -116,7 +95,7 @@ const Home = () => {
           />
         ))}
       </StyledSeries>
-      <h2>Upcoming Tv</h2>
+      <h2>Top Rated Tv</h2>
       <StyledSeries>
         {topRatedTv.map((tv) => (
           <Series

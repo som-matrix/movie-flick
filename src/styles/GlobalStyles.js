@@ -62,5 +62,9 @@ export const GlobalStyle = createGlobalStyle`
      outline:none;
      background:red;
      color:#fff;
+     font-weight:500;
+     padding:1rem 2rem;
+     border-radius:0.8rem;
+     cursor:pointer;
  }
 `

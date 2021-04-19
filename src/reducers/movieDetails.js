@@ -2,6 +2,7 @@
 import {getDetails,loadDetails} from '../constants'
 const initialState = {
     movieData:[],
+    castDataMovie:[],
     isLoading:false
 }
 
@@ -11,6 +12,7 @@ const movieDetailsReducer = (state=initialState,action)=>{
           return{
               ...state,
               movieData:action.payload.movie,
+              castDataMovie:action.payload.cast,
               isLoading:false
            }
         case loadDetails:

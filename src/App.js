@@ -13,6 +13,8 @@ import SeriesDetails from './components/SeriesDetails'
 import Home from './pages/Home'
 import Movie from './pages/Movie'
 import Tv from './pages/Tv'
+// Dispatch Action constant
+import {clearSearched} from './constants'
 function App() {
   const dispatch = useDispatch();
   //Movies and Series will mount when page loads
@@ -20,6 +22,11 @@ function App() {
     dispatch(loadMovies());
     dispatch(loadTv());
   });
+  const clearSearchHandler = ()=>{
+    dispatch({
+      type:clearSearched
+    })
+  }
   return (
     <Router>
       <div className="App">
@@ -27,16 +34,16 @@ function App() {
       <Header/>
       <Switch>
         <Route path="/" exact>
-          <Home/>
+          <Home clearSearchHandler={clearSearchHandler}/>
         </Route>
         <Route exact path="/movies">
-          <Movie/>
+          <Movie clearSearchHandler={clearSearchHandler}/>
         </Route>
         <Route path="/movies/:id">
           <MovieDetails/>
         </Route>
         <Route exact path="/tv">
-          <Tv/>
+          <Tv clearSearchHandler={clearSearchHandler}/>
         </Route>
         <Route path="/tv/:id">
           <SeriesDetails/>

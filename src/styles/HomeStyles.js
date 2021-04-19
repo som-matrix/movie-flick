@@ -7,6 +7,12 @@ export const StyledContainer = styled.div`
     padding: 5rem 4rem;
     font-size:2.8rem;
   }
+  .search{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 5rem 4rem;
+  }
 `;
 export const StyledMovies = styled.div`
   display: grid;

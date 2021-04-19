@@ -18,7 +18,7 @@ export const StyledTv = styled(motion.div)`
     letter-spacing: 0.1rem;
   }
   img {
-    height: 40vh;
+    height: 35vh;
     width: 100%;
     object-fit: cover;
     border-radius: 0.5rem;

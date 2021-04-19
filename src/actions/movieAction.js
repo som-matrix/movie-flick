@@ -28,10 +28,12 @@ export const loadMovies = ()=> async (dispatch) => {
 export const searchMovies = (movie_name)=> async (dispatch) => {
     const searchResults = await axios.get(searchedMovieUrl(movie_name))
 
+        
     dispatch({
         type:getSearchedMovie,
         payload:{
             searches:searchResults.data.results
         }
     })
+   
 }

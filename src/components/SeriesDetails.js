@@ -11,8 +11,8 @@ const SeriesDetails = () => {
         window.addEventListener('load',reloadHandler)
     })
     return (
-        <div>
-            <h2>{tvData.overview}</h2>
+        <div key={tvData.id}>
+            <h2  id={tvData.id}>{tvData.overview}</h2>
         </div>
     )
 }

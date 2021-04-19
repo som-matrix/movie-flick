@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 // Dispatch action
 import {searchMovies} from '../actions/movieAction'
 import {searchedTvSeries} from '../actions/tvAction'
+
 const Header = () => {
   const dispatch = useDispatch()
   const [searchInput,setSearchInput] = useState('')
