@@ -15,7 +15,7 @@ and also it's details and poster pictures.
 
 This page contains Straming ,Upcoming, TopRated , Popular Movies and
 
-![Movies](/src/assets/MoviePage.png)
+![Movies](/src/assets/MoviesPage.png)
 
 ### `SeriesPage`
 
