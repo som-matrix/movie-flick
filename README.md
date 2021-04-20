@@ -8,7 +8,7 @@ and also it's details and poster pictures.
  
  This page includes popular and upcoming movies and tv series 
 
-![Home](/src/assets/Homepage.png)
+![Home Page](/src/assets/Homepage.png)
 
 
 ### `MoviePage`
