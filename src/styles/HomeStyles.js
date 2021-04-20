@@ -4,14 +4,23 @@ export const StyledContainer = styled.div`
   min-height: 100vh;
   width: 100%;
   h2{
-    padding: 5rem 4rem;
+    padding: 6rem 4rem;
     font-size:2.8rem;
   }
   .search{
     display:flex;
     justify-content:space-between;
     align-items: center;
-    padding: 5rem 4rem;
+    padding: 5.5rem 4rem;
+  }
+  @media screen  and (max-width: 768px){
+    .search{
+      padding:5rem 3.5rem;
+      h2{
+        width:85%;
+        font-size:1.8rem;
+      }
+    }
   }
 `;
 export const StyledMovies = styled.div`

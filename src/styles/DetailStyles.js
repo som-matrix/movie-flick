@@ -2,16 +2,23 @@ import styled from "styled-components";
 
 export const StyledDetails = styled.div`
   min-height: 100vh;
+  height:auto;
   width: 100%;
   max-width: 100%;
   position: relative;
 `;
 export const StyledMovieDetails = styled.div`
-  height: 100%;
+  height:100%;
   width: 100%;
+  max-width: 100%;
+`;
+export const StyledSeriesDetails = styled.div`
+  height:100%;
+  width: 100%;
+  max-width:100%;
 `;
 export const StyledBackground = styled.div`
-  min-height: 55vh;
+  height: 55rem;
   width:100%;
   filter: blur(5px) brightness(0.5);
   img {
@@ -25,8 +32,8 @@ export const StyledFlexDetails = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 60vh;
   max-width: 1200px;
+  height:110rem;
   margin: auto;
   position: absolute;
   top: 50%;
@@ -38,10 +45,9 @@ export const StyledFlexDetails = styled.div`
     }
   }
   .description{
-      padding-left:5rem;
+      padding:1.5rem 5rem 0 5rem;
       width: 100%;
-      
-      height: 50vh;
+      height: 50rem;
       .title{
           padding:1rem 1rem;
           width: 80%;
@@ -87,6 +93,29 @@ export const StyledFlexDetails = styled.div`
           h4{
               font-size:1.4rem;
           }
+      }
+      .creators{
+        padding:2rem 1rem;
+        margin-left:1rem;
+        display:inline-block;
+      }
+  }
+  @media screen  and (max-width:1234px){
+      flex-direction:column;
+      max-width:100%;
+      top:70%;
+      .poster{
+        
+      }
+      .description{
+        padding:0;
+        margin:0;
+        .title{
+          width:100%;
+        }
+        .overview{
+          width:100%;
+        }
       }
   }
 `;

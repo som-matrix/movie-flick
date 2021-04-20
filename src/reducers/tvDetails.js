@@ -1,7 +1,6 @@
 import {getDetails,loadDetails} from '../constants'
 const initialState = {
     tvData:[],
-    castDataTv:[],
     isLoading:true
 }
 
@@ -11,7 +10,6 @@ const tvDetailsReducer = (state=initialState,action)=>{
           return{
               ...state,
               tvData:action.payload.tv,
-              castDataTv:action.payload.cast,
               isLoading:false
           }
         case loadDetails:

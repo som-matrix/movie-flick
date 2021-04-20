@@ -1,15 +1,17 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.div`
-  min-height: 8vh;
+  height: 10rem;
   width: 100%;
   background-color: #333;
-  position: relative;
   .main-wrapper {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 8vh;
+    height: 100%;
+    width:100%;
+    max-width:100%;
     margin: auto;
     padding: 0 4rem;
     .left-wrapper {
@@ -45,6 +47,32 @@ export const StyledHeader = styled.div`
     transition:all .3s;
     h3{
       color:#000;
+    }
+  }
+  @media screen and (max-width:800px){
+    .left-wrapper{
+      width:95%;
+    } 
+    .right-wrapper{
+       margin:0 auto;
+       position:absolute;
+       top:120%;
+       left:5;
+       transform:translate(0,-50%)
+       input{
+         width:100%;
+       }
+       .menu{
+         display:none;
+       }
+    }
+  }
+  @media screen and (max-width:468px){
+    .left-wrapper{
+       flex-direction:column;
+       .logo{
+        padding:1rem 0;
+       }
     }
   }
 `;

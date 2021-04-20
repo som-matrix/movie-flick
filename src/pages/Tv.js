@@ -12,7 +12,7 @@ const Tv = ({ clearSearchHandler }) => {
   return (
     <StyledContainer>
       {searchedTv.length && (
-        <div className="search">
+        <div className="search" key={searchedTv.id}>
           <h2>Searched results from Tv</h2>
           <button onClick={clearSearchHandler}>Clear</button>
         </div>

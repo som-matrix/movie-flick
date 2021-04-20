@@ -17,7 +17,7 @@ const Movie = ({clearSearchHandler}) => {
   return (
     <StyledContainer>
        {searchedMovie.length && (
-       <div className="search">
+       <div className="search" key={searchedMovie.id}>
          <h2>Searched results from movies</h2>
          <button onClick={clearSearchHandler}>Clear</button>
        </div>

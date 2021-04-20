@@ -43,7 +43,3 @@ export const searchedTvShowUrl = (tv_name) =>
 // Get movie details and tv details 
 export const getMovieDetailsUrl = (movie_id)=> `${baseUrl}${movie_id}?api_key=${my_key}&language=en-US`
 export const getTvDetailsUrl = (tv_id)=> `${baseUrlTV}${tv_id}?api_key=${my_key}&language=en-US`
-
-// Getting the cast and crew 
-export const getMovieCastUrl = (movie_id)=> `${baseUrl}${movie_id}/credits?api_key=${my_key}&language=en-US`
-export const getTvCastUrl = (tv_id)=> `${baseUrlTV}${tv_id}/credits?api_key=${my_key}&language=en-US`
