@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loadDetailsTv } from "../actions/detailsTvAction";
@@ -11,6 +11,12 @@ const Series = ({ id, title, image, releaseDate, voteCount }) => {
     history.push(`/tv/${id}`);
     dispatch(loadDetailsTv(id));
   };
+  const reloadHandler = () => {
+    history.push("/");
+  };
+  useEffect(() => {
+    window.addEventListener("load", reloadHandler);
+  });
   return (
     <>
       {title && image === null ? (

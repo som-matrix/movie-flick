@@ -12,7 +12,7 @@ const MovieDetails = () => {
   const { movieData } = useSelector((state) => state.movieDetails);
   const history = useHistory();
   const reloadHandler = () => {
-    history.push("/movies");
+    history.push("/");
   };
   useEffect(() => {
     window.addEventListener("load", reloadHandler);

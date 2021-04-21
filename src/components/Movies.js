@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loadDetailsMovie } from "../actions/detailsMovieAction";
@@ -11,6 +11,12 @@ const Movies = ({ id, title, image, releaseDate, voteCount }) => {
     history.push(`/movies/${id}`);
     dispatch(loadDetailsMovie(id));
   };
+  const reloadHandler = () => {
+    history.push("/");
+  };
+  useEffect(() => {
+    window.addEventListener("load", reloadHandler);
+  });
   // Lets add event throttling 
   const throttled = (func,limit) =>{
     let flag = true

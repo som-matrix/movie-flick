@@ -12,7 +12,7 @@ const SeriesDetails = () => {
   const history = useHistory();
   const { tvData } = useSelector((state) => state.tvDetails);
   const reloadHandler = () => {
-    history.push(`/tv`);
+    history.push(`/`);
   };
   useEffect(() => {
     window.addEventListener("load", reloadHandler);
