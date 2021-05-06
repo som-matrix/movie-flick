@@ -2,7 +2,7 @@
 import {getDetails,loadDetails} from '../constants'
 const initialState = {
     movieData:[],
-    isLoading:false
+    isLoading:true
 }
 
 const movieDetailsReducer = (state=initialState,action)=>{

@@ -67,4 +67,15 @@ export const GlobalStyle = createGlobalStyle`
      border-radius:0.8rem;
      cursor:pointer;
  }
+ .loading{
+     display:flex;
+     justify-content:center;
+     align-items:center;
+     height:100vh;
+     width:100%;
+     background:#000;
+     h1{
+         text-align:center;
+     }
+ }
 `
